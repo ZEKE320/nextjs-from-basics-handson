@@ -1,8 +1,10 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
+  "folders": [
+    {
+      "path": "."
+    }
   ],
-  "settings": {}
+  "settings": {
+    "terminal.integrated.cwd": "${workspaceFolder}/nextjs-sample",
+  },
 }
