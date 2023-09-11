@@ -1,0 +1,28 @@
+{
+  "recommendations": [
+    "ms-ceintl.vscode-language-pack-ja",
+    "xabikos.javascriptsnippets",
+    "ms-vscode.live-server",
+    "yzhang.markdown-all-in-one",
+    "yzane.markdown-pdf",
+    "davidanson.vscode-markdownlint",
+    "pkief.material-icon-theme",
+    "ms-edgedevtools.vscode-edge-devtools",
+    "christian-kohler.npm-intellisense",
+    "ziyasal.vscode-open-in-github",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "pdconsec.vscode-print",
+    "alefragnani.project-manager",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode.remote-server",
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "ms-vscode.remote-explorer",
+    "ms-vscode.remote-repositories",
+    "sonarsource.sonarlint-vscode",
+    "gruntfuggly.todo-tree",
+    "tomoki1207.pdf",
+    "ms-vscode-remote.remote-wsl",
+    "redhat.vscode-yaml"
+  ]
+}
