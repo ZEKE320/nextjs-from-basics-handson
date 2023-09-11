@@ -22,6 +22,7 @@
     "ms-vscode.remote-server",
     "pdconsec.vscode-print",
     "pkief.material-icon-theme",
+    "postman.postman-for-vscode",
     "redhat.vscode-yaml",
     "sonarsource.sonarlint-vscode",
     "streetsidesoftware.code-spell-checker",
@@ -30,6 +31,6 @@
     "xabikos.javascriptsnippets",
     "yzane.markdown-pdf",
     "yzhang.markdown-all-in-one",
-    "ziyasal.vscode-open-in-github",
+    "ziyasal.vscode-open-in-github"
   ]
 }
