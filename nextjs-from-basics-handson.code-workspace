@@ -6,6 +6,6 @@
   ],
   "settings": {
     "terminal.integrated.cwd": "${workspaceFolder}/nextjs-handson1/",
-    "cSpell.words": ["wght", "prismjs"]
+    "cSpell.words": ["wght", "prismjs", "notionhq", "nextjs", "handson"]
   }
 }
