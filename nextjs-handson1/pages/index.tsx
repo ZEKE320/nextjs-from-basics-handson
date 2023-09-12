@@ -56,11 +56,17 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
   }
 
   let title: string | null = null;
-  if (page.properties["Name"].type === "title") {
+  if (
+    page.properties["Name"].type === "title" &&
+    Array.isArray(page.properties["Name"].title)
+  ) {
     title = page.properties["Name"].title[0]?.plain_text ?? null;
   }
   let slug: string | null = null;
-  if (page.properties["Slug"].type === "rich_text") {
+  if (
+    page.properties["Slug"].type === "rich_text" &&
+    Array.isArray(page.properties["Slug"].rich_text)
+  ) {
     slug = page.properties["Slug"].rich_text[0]?.plain_text ?? null;
   }
 
@@ -111,8 +117,8 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
     id: page.id,
     title,
     slug,
-    createdTs: page.created_time,
-    lastEditedTs: page.last_edited_time,
+    createdTs: "created_time" in page ? page.created_time : null,
+    lastEditedTs: "last_edited_time" in page ? page.last_edited_time : null,
     contents,
   };
 
