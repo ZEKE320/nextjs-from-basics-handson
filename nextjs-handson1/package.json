@@ -11,13 +11,17 @@
   "devDependencies": {
     "@notionhq/client": "^2.2.13",
     "@types/node": "20.6.0",
-    "@types/react": "18.2.21",
+    "@types/prismjs": "^1.26.0",
     "@types/react-dom": "18.2.7",
-    "eslint": "8.49.0",
+    "@types/react": "18.2.21",
+    "babel-plugin-prismjs": "^2.1.0",
+    "dayjs": "^1.11.9",
     "eslint-config-next": "13.4.19",
+    "eslint": "8.49.0",
     "next": "13.4.19",
-    "react": "18.2.0",
+    "prismjs": "^1.29.0",
     "react-dom": "18.2.0",
+    "react": "18.2.0",
     "typescript": "5.2.2"
   }
 }
