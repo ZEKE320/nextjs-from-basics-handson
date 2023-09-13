@@ -1,12 +1,11 @@
+import { Layout, PostComponent } from "@/lib/component/Layout";
+import { Content, Post } from "@/lib/types/post/index";
 import { Client } from "@notionhq/client";
 import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 import dayjs from "dayjs";
 import { GetStaticProps, NextPage } from "next";
 import prism from "prismjs";
 import { useEffect } from "react";
-import styles from "@/styles/Home.module.scss";
-import { Content, Post } from "@/lib/types/Post";
-import Link from "next/link";
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
