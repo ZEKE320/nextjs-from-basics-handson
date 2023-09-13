@@ -82,7 +82,9 @@ export const getPosts = async (slug?: string) => {
         title: null,
         slug: null,
         createdTs: null,
+        createdTsViewFmt: null,
         lastEditedTs: null,
+        lastEditedTsViewFmt: null,
         contents: [],
       });
       return;
@@ -104,12 +106,21 @@ export const getPosts = async (slug?: string) => {
       slug = page.properties["Slug"].rich_text[0]?.plain_text ?? null;
     }
 
+    const createdTs = "created_time" in page ? page.created_time : null;
+    const editedTs = "last_edited_time" in page ? page.last_edited_time : null;
+
     posts.push({
       id: page.id,
       title,
       slug,
-      createdTs: "created_time" in page ? page.created_time : null,
-      lastEditedTs: "last_edited_time" in page ? page.last_edited_time : null,
+      createdTs: createdTs,
+      createdTsViewFmt: createdTs
+        ? dayjs(createdTs).format("YYYY-MM-DD HH:mm:ss")
+        : null,
+      lastEditedTs: editedTs,
+      lastEditedTsViewFmt: editedTs
+        ? dayjs(editedTs).format("YYYY-MM-DD HH:mm:ss")
+        : null,
       contents: [],
     });
   });
