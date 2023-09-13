@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import { GetStaticProps, NextPage } from "next";
 import prism from "prismjs";
 import { useEffect } from "react";
-import styles from "../styles/Home.module.css";
+import styles from "@/styles/Home.module.scss";
 import { Content, Post } from "../types/Post";
 import Link from "next/link";
 

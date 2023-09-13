@@ -12,16 +12,17 @@
     "@notionhq/client": "^2.2.13",
     "@types/node": "20.6.0",
     "@types/prismjs": "^1.26.0",
-    "@types/react-dom": "18.2.7",
     "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
     "babel-plugin-prismjs": "^2.1.0",
     "dayjs": "^1.11.9",
-    "eslint-config-next": "13.4.19",
     "eslint": "8.49.0",
+    "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "prismjs": "^1.29.0",
-    "react-dom": "18.2.0",
     "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.66.1",
     "typescript": "5.2.2"
   }
 }

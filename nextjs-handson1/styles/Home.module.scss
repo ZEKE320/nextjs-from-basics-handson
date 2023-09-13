@@ -50,8 +50,12 @@
 .quote {
   line-height: 24px;
   font-style: italic;
-  color: #d1d5db;
+  color: #404146;
   margin: 0;
   padding: 0 16px;
   border-left: 2px solid #d1d5db;
+
+  @media (prefers-color-scheme: dark) {
+    color: #d1d5db;
+  }
 }
