@@ -14,6 +14,8 @@ export type Post = {
   title: string | null;
   slug: string | null;
   createdTs: string | null;
+  createdTsViewFmt: string | null;
   lastEditedTs: string | null;
+  lastEditedTsViewFmt: string | null;
   contents: Content[];
 };
