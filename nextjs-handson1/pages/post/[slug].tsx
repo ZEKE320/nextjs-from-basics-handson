@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { Post } from "../../types/Post";
-import { getPostContents, getPosts } from "../index";
+import { Post } from "@/types/Post";
+import { getPostContents, getPosts } from "@/pages/index";
 
 type StaticProps = {
   post?: Post;
