@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "alefragnani.project-manager",
+    "bradlc.vscode-tailwindcss",
     "christian-kohler.npm-intellisense",
     "christian-kohler.path-intellisense",
     "codezombiech.gitignore",
