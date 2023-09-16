@@ -3,7 +3,7 @@ import { PostComponent } from "@/lib/component/Post";
 import { Post } from "@/lib/types/Post/index";
 import { getPostContents, getPosts } from "@/pages/index";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import Prism from "@/prismjs-custom";
+import Prism from "@/prismjs.config";
 import { useEffect } from "react";
 
 type StaticPathsParams = {

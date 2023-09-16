@@ -2,7 +2,7 @@ import { Layout } from "@/lib/component/Layout";
 import { PostComponent } from "@/lib/component/Post";
 import { Content } from "@/lib/types/Content";
 import { Post } from "@/lib/types/Post/index";
-import Prism from "@/prismjs-custom";
+import Prism from "@/prismjs.config";
 import { Client } from "@notionhq/client";
 import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 import { GetStaticProps, NextPage } from "next";
