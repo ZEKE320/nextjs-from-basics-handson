@@ -1,13 +1,17 @@
+import { Layout } from "@/lib/component/Layout";
+import { PostComponent } from "@/lib/component/Post";
+import { Post } from "@/lib/types/Post/index";
+import { getPostContents, getPosts } from "@/pages/index";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { Post } from "../../types/Post";
-import { getPostContents, getPosts } from "../index";
-
-type StaticProps = {
-  post?: Post;
-};
+import Prism from "@/prismjs-custom";
+import { useEffect } from "react";
 
 type StaticPathsParams = {
   slug: string;
+};
+
+type StaticProps = {
+  posts: Post[];
 };
 
 export const getStaticPaths: GetStaticPaths<StaticPathsParams> = async () => {
@@ -30,12 +34,10 @@ export const getStaticPaths: GetStaticPaths<StaticPathsParams> = async () => {
 export const getStaticProps: GetStaticProps<
   StaticProps,
   StaticPathsParams
-> = async ({ params, preview }) => {
+> = async ({ params }) => {
   const notFoundProps = {
-    props: {},
-    redirect: {
-      destination: "/404",
-    },
+    props: { posts: [] },
+    redirect: { destination: "/404" },
   };
 
   if (!params) {
@@ -44,26 +46,35 @@ export const getStaticProps: GetStaticProps<
 
   const { slug } = params;
   const posts = await getPosts(slug);
-  const post = posts.shift();
-  if (!post) {
+  if (posts.length === 0) {
     return notFoundProps;
   }
 
-  const contents = await getPostContents(post);
-  post.contents = contents;
+  await Promise.all(
+    posts.map(async (post) => {
+      const contents = await getPostContents(post);
+      post.contents = contents;
+    })
+  );
+
   return {
-    props: {
-      post,
-    },
+    props: { posts },
+    revalidate: 60,
   };
 };
 
-const PostPage: NextPage<StaticProps> = ({ post }) => {
-  if (!post) {
-    return null;
-  }
+const PostPage: NextPage<StaticProps> = ({ posts }) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [posts]);
 
-  return <div>{JSON.stringify(post)}</div>;
+  return (
+    <Layout>
+      {posts.map((post) => {
+        return <PostComponent post={post} key={post.id} />;
+      })}
+    </Layout>
+  );
 };
 
 export default PostPage;

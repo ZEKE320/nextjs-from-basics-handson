@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm install",
+      "type": "npm",
+      "group": "build",
+      "script": "install",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "path": "./nextjs-handson1"
+    },
+    {
+      "label": "Next.js dev",
+      "type": "npm",
+      "group": "build",
+      "script": "dev",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "path": "./nextjs-handson1"
+    },
+    {
+      "label": "Next.js build",
+      "type": "npm",
+      "group": "build",
+      "script": "build",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "path": "./nextjs-handson1"
+    },
+    {
+      "label": "Next.js start",
+      "type": "npm",
+      "group": "build",
+      "script": "start",
+      "path": "./nextjs-handson1"
+    }
+  ]
+}
