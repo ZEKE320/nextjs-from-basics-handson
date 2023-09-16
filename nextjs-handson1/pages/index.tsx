@@ -1,10 +1,11 @@
-import { Layout, PostComponent } from "@/lib/component/Layout";
-import { Content, Post } from "@/lib/types/post/index";
+import { Layout } from "@/lib/component/Layout";
+import { PostComponent } from "@/lib/component/Post";
+import { Content } from "@/lib/types/Content";
+import { Post } from "@/lib/types/Post/index";
+import Prism from "@/prismjs-custom";
 import { Client } from "@notionhq/client";
 import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
-import dayjs from "dayjs";
 import { GetStaticProps, NextPage } from "next";
-import prism from "prismjs";
 import { useEffect } from "react";
 
 const notion = new Client({
@@ -144,6 +145,7 @@ export const getPostContents = async (post: Post) => {
           text: block.code.rich_text[0]?.plain_text ?? null,
           language: block.code.language,
         });
+        break;
     }
   });
   return contents;
@@ -167,8 +169,8 @@ export const getStaticProps: GetStaticProps<StaticProps> = async () => {
 
 const Home: NextPage<StaticProps> = ({ posts }) => {
   useEffect(() => {
-    prism.highlightAll();
-  }, []);
+    Prism.highlightAll();
+  }, [posts]);
 
   return (
     <Layout>
