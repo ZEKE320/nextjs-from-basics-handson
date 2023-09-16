@@ -1,13 +1,17 @@
-import { Post } from "@/lib/types/post/index";
+import { Layout } from "@/lib/component/Layout";
+import { PostComponent } from "@/lib/component/Post";
+import { Post } from "@/lib/types/Post/index";
 import { getPostContents, getPosts } from "@/pages/index";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-
-type StaticProps = {
-  post?: Post;
-};
+import Prism from "@/prismjs-custom";
+import { useEffect } from "react";
 
 type StaticPathsParams = {
   slug: string;
+};
+
+type StaticProps = {
+  posts: Post[];
 };
 
 export const getStaticPaths: GetStaticPaths<StaticPathsParams> = async () => {
