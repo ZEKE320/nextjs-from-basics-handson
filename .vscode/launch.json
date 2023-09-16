@@ -2,13 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Microsoft Edge and open the Next.js dev server",
+      "name": "Launch Edge Debug-mode",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}",
+      "webRoot": "${workspaceFolder}/nextjs-handson2",
       "runtimeExecutable": "stable",
-      "runtimeArgs": ["--user-data-dir=remote-debug-profile"],
+      "runtimeArgs": ["--user-data-dir=remote-debug-profile"]
     }
   ]
 }
