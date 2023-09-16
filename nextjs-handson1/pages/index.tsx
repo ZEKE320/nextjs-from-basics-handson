@@ -15,21 +15,6 @@ type StaticProps = {
   posts: Post[];
 };
 
-export const getStaticProps: GetStaticProps<StaticProps> = async () => {
-  const posts: Post[] = await getPosts();
-  const contentsList: Content[][] = await Promise.all(
-    posts.map((post) => {
-      return getPostContents(post);
-    })
-  );
-  posts.forEach((post, index) => {
-    post.contents = contentsList[index];
-  });
-  return {
-    props: { posts },
-  };
-};
-
 export const getPosts = async (slug?: string) => {
   let database: QueryDatabaseResponse | undefined = undefined;
 
@@ -170,6 +155,22 @@ export const getPostContents = async (post: Post) => {
     }
   });
   return contents;
+};
+
+export const getStaticProps: GetStaticProps<StaticProps> = async () => {
+  const posts: Post[] = await getPosts();
+  const contentsList: Content[][] = await Promise.all(
+    posts.map((post) => {
+      return getPostContents(post);
+    })
+  );
+  posts.forEach((post, index) => {
+    post.contents = contentsList[index];
+  });
+  return {
+    props: { posts },
+    revalidate: 60,
+  };
 };
 
 const Home: NextPage<StaticProps> = ({ posts }) => {
