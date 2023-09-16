@@ -1,5 +1,4 @@
-html,
-body {
+html {
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -21,4 +20,8 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+* {
+  box-sizing: border-box;
 }
