@@ -66,9 +66,7 @@ export const getPosts = async (slug?: string) => {
         title: null,
         slug: null,
         createdTs: null,
-        createdTsViewFmt: null,
         lastEditedTs: null,
-        lastEditedTsViewFmt: null,
         contents: [],
       });
       return;
@@ -98,13 +96,7 @@ export const getPosts = async (slug?: string) => {
       title,
       slug,
       createdTs: createdTs,
-      createdTsViewFmt: createdTs
-        ? dayjs(createdTs).format("YYYY-MM-DD HH:mm:ss")
-        : null,
       lastEditedTs: editedTs,
-      lastEditedTsViewFmt: editedTs
-        ? dayjs(editedTs).format("YYYY-MM-DD HH:mm:ss")
-        : null,
       contents: [],
     });
   });
